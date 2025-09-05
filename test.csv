@@ -1,0 +1,5 @@
+﻿Path,Sample,FileName,Reference,Group,Outgroup
+/PATH_TO_RAW_DATA_DIRECTORY,WHAT_YOU_WANT_SAMPLE_TO_BE_CALLED,FILENAME_IDENTIFIER,IRRELEVANT_TO_THIS_PIPELINE,IRRELEVANT_TO_THIS_PIPELINE,IRRELEVANT_TO_THIS_PIPELINE
+/orcd/data/tami/003/raw_data/2024/20241219Lie_novaseq,AHM_v0007_A02,v0007_A02,VE303-all_hybrid-cat,1,0
+/orcd/data/tami/003/raw_data/2024/20241219Lie_novaseq,AHM_v0007_A03,v0007_A03,VE303-all_hybrid-cat,1,0
+/orcd/data/tami/003/raw_data/2024/20241219Lie_novaseq,AHM_v0007_A04,v0007_A04,VE303-all_hybrid-cat,1,0

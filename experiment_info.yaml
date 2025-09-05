@@ -1,0 +1,4 @@
+experiment_name: "ve4_prophage_map"
+sample_table: ./all_samples_rm_low_cov.csv
+myscripts_directory: ./scripts
+ref_genome_directory: /orcd/data/tami/003/reference_genomes

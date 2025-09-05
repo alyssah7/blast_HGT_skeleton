@@ -1,0 +1,49 @@
+#change configfile to point to experiment_config.yaml for this experiment
+#change mkdir, --output and --error to point to log folder for this experiment
+#change mail-user, mail-type to point to your email
+#can change default resources or set-resources as needed
+
+
+snakefile: Snakefile
+use-conda: True
+conda-frontend: mamba
+rerun-incomplete: True
+restart-times: 1
+jobs: 490
+latency-wait: 30
+keep-going: True
+configfile: ./experiment_info.yaml
+conda-prefix: /orcd/data/tami/003/tools/conda_snakemake
+cluster-status: /orcd/data/tami/003/scripts/slurm_status.py
+reason: True
+group-components: group0=100
+# dryrun: True
+# unlock: True
+
+cluster:
+  mkdir -p ./logs/ &&
+  sbatch
+    --partition={resources.partition}
+    --cpus-per-task={resources.cpus_per_task}
+    --mem={resources.mem}
+    --time={resources.time}
+    --job-name="SM.{rule}"
+    --output="./logs/%j_{rule}.err.txt"
+    --error="./logs/%j_{rule}.err.txt"
+    --mail-user="alyssah@mit.edu"
+    --mail-type="FAIL"
+
+#note that resource names should use underscore _ instead of dash -
+
+default-resources:
+   - partition="sched_mit_tami,sched_mit_hill,mit_preemptable"
+   - time="1:00:00"
+   - cpus_per_task=1
+   - mem=8000
+
+set-resources:
+   - blastn:mem=500
+   - blastn:partition="mit_preemptable,sched_mit_tami"
+   - combine_blast:mem=128000
+   - refilter_blast_hits:mem=16000
+   - genomad:mem=64000
