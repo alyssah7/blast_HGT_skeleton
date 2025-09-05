@@ -212,7 +212,7 @@ rule genomad:
     conda:
         "genomad"
     output:
-        "genomad/{sample}/genome_summary/genome_virus_genes.tsv"
+        "genomad/{sample}/genome_summary/{sample}_virus_genes.tsv"
     shell:
         """
         genomad end-to-end --cleanup {input.fasta} {params.outdir} {params.db}
@@ -221,7 +221,7 @@ rule genomad:
 rule genomad_collect:
     input:
         lambda wildcards: expand(
-            "genomad/{sample}/genome_summary/genome_virus_genes.tsv",
+            "genomad/{sample}/genome_summary/{sample}_virus_genes.tsv",
             sample=get_subsamples(wildcards)
         )
     output:
