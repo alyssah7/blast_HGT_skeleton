@@ -1,23 +1,20 @@
-HGT-finding pipeline using all-by-all BLAST of isolate assemblies\
-Alyssa Mitchell\
-2025.09.05\
-\
+HGT-finding pipeline using all-by-all BLAST of isolate assemblies
+Alyssa Mitchell
+2025.09.05
 
-Inspired by: \
-{\field{\*\fldinst{HYPERLINK "https://github.com/almlab/GMbC_HGTs/blob/master/2.HGT_detection_qualityFiltering.txt"}}{\fldrslt 
-\f0\b0 https://github.com/almlab/GMbC_HGTs/blob/master/2.HGT_detection_qualityFiltering.txt}}
-\f0\b0  \
-\
 
-Notes: \
+Inspired by: 
+https://github.com/almlab/GMbC_HGTs/blob/master/2.HGT_detection_qualityFiltering.txt
 
-\f0\b0 - very much in-progress pipeline, genomad step and beyond still being debugged\
-- depending on data size, some jobs run pretty slowly. Room to optimize data structures further.\
-	- Because of this, filtering is done in 2 steps, one in chunks of isolate pairs, and the other all together\
-- there are some dataset-specific things you\'92ll need to change \
-	- ie: refilter_blast_hits uses meta="2025-04_combined_isolate_metadata.csv"\
-		- this is a .csv that connects isolate names to their source subject (the person they came from)\
-		- lactinV isolates were named by plate and well, all of which you should be able to access in Google Docs and turn into human host information\
-- My isolate assemblies all live in the same directory and are named by SampleID, so your inputs for rules like blastn, longest_contig_all and genomad may need tweaking.\
-- for general what-is-snakemake and what-are-all-these-files-for types of questions, I advise you to check out the lab\'92s WideVariant pipeline documentation. It should help answer many of these.\
-	- {\field{\*\fldinst{HYPERLINK "https://github.com/liebermanlab/WideVariant/tree/main"}}{\fldrslt https://github.com/liebermanlab/WideVariant/tree/main}}}
+Notes: 
+
+- very much in-progress pipeline, genomad step and beyond still being debugged
+- depending on data size, some jobs run pretty slowly. Room to optimize data structures further.
+	- Because of this, filtering is done in 2 steps, one in chunks of isolate pairs, and the other all together
+- there are some dataset-specific things you'll need to change 
+	- ie: refilter_blast_hits uses meta="2025-04_combined_isolate_metadata.csv"
+		- this is a .csv that connects isolate names to their source subject (the person they came from)
+		- lactinV isolates were named by plate and well, all of which you should be able to access in Google Docs and turn into human host information
+- My isolate assemblies all live in the same directory and are named by SampleID, so your inputs for rules like blastn, longest_contig_all and genomad may need tweaking.
+- for general what-is-snakemake and what-are-all-these-files-for types of questions, I advise you to check out the lab's WideVariant pipeline documentation. It should help answer many of these.
+	- https://github.com/liebermanlab/WideVariant/tree/main
