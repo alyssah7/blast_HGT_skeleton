@@ -16,5 +16,6 @@ Notes:
 		- this is a .csv that connects isolate names to their source subject (the person they came from)
 		- lactinV isolates were named by plate and well, all of which you should be able to access in Google Docs and turn into human host information
 - My isolate assemblies all live in the same directory and are named by SampleID, so your inputs for rules like blastn, longest_contig_all and genomad may need tweaking.
+- I used a percent identity cutoff of 99.9% for blastn. The inspired-by paper used 100%. That would certainly help reduce some data size issues too. I just need to allow some flexibility for SNPs that we *expect* in our data.
 - for general what-is-snakemake and what-are-all-these-files-for types of questions, I advise you to check out the lab's WideVariant pipeline documentation. It should help answer many of these.
 	- https://github.com/liebermanlab/WideVariant/tree/main
